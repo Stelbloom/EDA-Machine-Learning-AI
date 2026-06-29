@@ -225,18 +225,6 @@ I experimented with multiple classifiers:
 
 After comparison and tuning, **Random Forest** emerged as the **best‑performing model**, balancing accuracy, robustness, and interpretability.
 
-### Modelling pipeline (high level)
-
-```mermaid
-flowchart LR
-  A[Raw Booking Data] --> B[Cleaning & Feature Engineering]
-  B --> C[Train/Test Split]
-  C --> D[SMOTE for Class Balance]
-  D --> E[Model Training\n(LogReg, RF, XGBoost, ...)]
-  E --> F[Evaluation\n(Accuracy, F1, ROC-AUC)]
-  F --> G[Feature Importance & Insights]
-  G --> H[Recommendations for Revenue & Ops]
-```
 
 A `scikit‑learn` pipeline with `ColumnTransformer` was used to combine preprocessing and model training in a clean, reproducible way.
 
